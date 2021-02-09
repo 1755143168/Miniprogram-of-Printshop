@@ -1,0 +1,117 @@
+{
+  "miniprogramRoot": "miniprogram/",
+  "cloudfunctionRoot": "cloudfunctions/",
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "enableEngineNative": false,
+    "bundle": false,
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "useApiHostProcess": true
+  },
+  "appid": "wxdaae92e6a9470c36",
+  "projectname": "%E6%A0%A1%E5%9B%AD%E6%89%93%E5%8D%B0",
+  "libVersion": "2.8.1",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "首页",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "我的",
+          "pathName": "pages/user/user",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 2,
+          "name": "QQ操作界面",
+          "pathName": "pages/logon/logon",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "选择界面",
+          "pathName": "pages/chose/chose",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "黑白页",
+          "pathName": "pages/black/black",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "黑白印界面",
+          "pathName": "pages/choose_style/choose_style",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "彩印界面",
+          "pathName": "pages/choose_style_new/choose_style_new",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "订单界面",
+          "pathName": "pages/order/order",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "选择文件--弹窗组件",
+          "pathName": "components/select-pop",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

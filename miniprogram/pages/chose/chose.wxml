@@ -1,0 +1,16 @@
+<!--miniprogram/pages/chose/chose.wxml-->
+<!--顶部-->
+<image class="bgimage" src="/icon/indexbg.jpg"></image>
+<!--选择
+<view class="chose">
+  <view class="b_and_c" bindtap="b_and_c">
+    <image class="chose.image" src="cloud://campusprinting-4guaey7l34880aa5.6361-campusprinting-4guaey7l34880aa5-1303184703/user_file/项目文件/打印.png"></image>
+    <view class="chose_t">黑白打印</view>
+    <view class="chose_txt">支持:word,pdf,excel</view>
+  </view>
+  <view class="c" bindtap="c">
+    <image class="chose.image" src="cloud://campusprinting-4guaey7l34880aa5.6361-campusprinting-4guaey7l34880aa5-1303184703/user_file/项目文件/打印 (3).png"></image>
+    <view class="chose_t">彩色打印</view>
+    <view class="chose_txt">支持:word,pdf,excel</view>
+  </view>
+</view>-->

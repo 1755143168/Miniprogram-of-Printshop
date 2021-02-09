@@ -1,0 +1,234 @@
+/**index.wxss**/
+page{
+  background-image: url(cloud://campusprinting-4guaey7l34880aa5.6361-campusprinting-4guaey7l34880aa5-1303184703/icon/background.png);
+}
+/*大框*/
+.chose_school{
+  height: 80rpx;
+  width: 100%;
+  display: flex;
+  /*justify-content: center;*/
+}
+/*点击选择框*/
+.picker{
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #fff;
+  font-size: 35rpx;
+  padding: 0 20px 0 20rpx;/*上，右，下，左*/
+  overflow: hidden;
+}
+.picker_1{
+  height: 100%;
+  width: 83%;
+}
+.picker_text_1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.picker_text{
+  color: #ec5300;
+  font-size: small;
+  /*float: right;*/
+}
+
+
+/*横白框*/
+.print_input{
+  display: flex;
+  background-color: #ffff;
+  height: 80rpx;
+  width: 100%;
+  display: flex;
+}
+/*预览框*/
+.delet{
+  margin: 25px 50px 50px 100px;
+}
+/*打印份数*/
+.picker_txt{
+  height: 80rpx;
+  line-height: 80rpx;
+}
+/*打印框*/
+.picker_input{
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 71%;
+}
+
+/*选择文件按钮*/
+.buttton_a{
+  margin:25px 50px 50px 100px;
+}
+/*选择图片View*/
+.addImv{
+  margin: 20rpx 20rpx;
+  height: 200rpx;
+  background-color: #EEEEEE;
+  border: 1px dashed gray;
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+}
+/*添加文件*/
+.addImv .chooseView{
+  width: 160rpx;
+  height: 160rpx;
+  background-color: #ffffff;
+  margin-left: 10rpx;
+  border: 1px solid lightgray;
+
+  text-align: center;
+  line-height: 180rpx;
+}
+.addImv .chooseImv{
+  width: 40rpx;
+  height: 40rpx;
+}
+/*已选择的文件*/
+.addImv .upFile{
+  margin-left: 10rpx;
+  width: 160rpx;
+  height:160rpx;
+  position: relative;
+}
+.addImv .upFile .itemImv{
+  width: 100%;
+  height: 100%;
+}
+/*删除文件*/
+.addImv .upFile .closeImv{
+  position: absolute;
+  right: 0rpx;
+  top: 0rpx;
+  width: 35rpx;
+  height:35rpx;
+}
+
+/*选择图片View*/
+.addImv{
+  margin: 20rpx 20rpx;
+  height: 150rpx;
+  width: 660rpx;
+  background-color: #EEEEEE;
+  border: 1px dashed gray;
+  /*align-items: center;*/
+  /*justify-content: center;*/
+  padding:20rpx;
+  flex-direction: column;
+}
+
+/*删除图标*/
+.del_image{
+  height: 50rpx;
+  width: 50rpx;
+}
+
+
+
+
+
+
+
+.show-btn {
+  margin-top: 100rpx;
+  color: #22cc22;
+}
+
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+
+.modal-dialog {
+  width: 540rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 9999;
+  background: #f9f9f9;
+  margin: -180rpx 105rpx;
+  border-radius: 36rpx;
+}
+
+.modal-title {
+  padding-top: 50rpx;
+  font-size: 36rpx;
+  color: #030303;
+  text-align: center;
+}
+
+.modal-content {
+  padding: 50rpx 32rpx;
+}
+
+.modal-input {
+  display: flex;
+  background: #fff;
+  border: 2rpx solid #ddd;
+  border-radius: 4rpx;
+  font-size: 28rpx;
+}
+
+
+.input {
+  width: 100%;
+  height: 82rpx;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  color: #333;
+}
+
+input-holder {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  height: 86rpx;
+  border-top: 1px solid #dedede;
+  font-size: 34rpx;
+  line-height: 86rpx;
+}
+
+.btn-cancel {
+  width: 50%;
+  color: #666;
+  text-align: center;
+  border-right: 1px solid #dedede;
+}
+
+.btn-confirm {
+  width: 50%;
+  color: #ec5300;
+  text-align: center;
+}
+
+.txt{
+  color: #ec5300;
+}
+
+.leding{
+  color: blue;
+}
+
+
+
+
+
+

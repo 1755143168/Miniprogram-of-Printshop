@@ -1,0 +1,295 @@
+/* miniprogram/pages/choose_style/choose_style.wxss */
+/*********block*************/
+page{
+      height: 100%;
+    }
+    .addImv{
+      height: 86%;
+    }
+    
+    /*卡片*/
+    .card_mian{
+      height: 250rpx;
+      margin: 20rpx;
+      background-color:#E6E6FA;
+      border-radius: 15rpx;
+      box-shadow: 10rpx 10rpx 20rpx 10rpx	#C0C0C0;
+      position: relative;/*父元素位置要设置为相对*/
+    }
+    /*上部分*/
+    .card_top{
+      height: 72%;
+      display: flex;
+      align-items: center;
+      position: relative;/*父元素位置要设置为相对*/
+    }
+    .delet{ 
+      position: absolute; /* 要约束所在位置的子元素的位置要设置成绝对 */
+      width: 50rpx;
+      height: 50rpx;
+      margin: 20rpx;
+      right: 0;
+      top: 0;
+    }
+    /*跳转*/
+    .navigator_1{
+      border-radius: 20rpx;
+      height: 60rpx;
+      width: 140rpx;
+      position: absolute;
+      right: 80rpx;
+      top: 80rpx;
+      background-color:#6495ED;
+      font-size: 40rpx;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .navigator_1txt{
+      font-size: 30rpx;
+      color: #ffff;
+    }
+    
+    /*下部分*/
+    .card_down{
+      /*height: 28%;*/
+      width: 100%;
+      position: absolute;
+      bottom: 20rpx;
+    }
+    .card_down_txt{
+      font-size: 25rpx;
+      margin: 20rpx;
+    }
+    .card_down_txt_behind{
+      position: absolute;
+      font-size: 25rpx;
+      margin: 20rpx;
+      right: 20rpx;
+    }
+    /*分割线*/
+    .view_fengexian {
+      width: 100%;
+      height: 5rpx;
+      display: flex;
+      flex-direction: row;
+      background-color:#D3D3D3;
+      position: absolute;
+      bottom: 75rpx;
+    }
+    /*文件类型图片*/
+    .card_top_image{
+      width: 100rpx;
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100rpx;
+      margin: 25rpx;
+    }
+    .card_top_txt{
+      position: absolute;
+      top: 25rpx;
+      left: 150rpx;
+    }
+    
+    
+    /*添加icon*/
+    .add{
+      position: fixed;
+      width: 120rpx;
+      height: 120rpx;
+      /*position: absolute;*/
+      bottom: 200rpx;
+      margin: 20rpx;
+      right: 0;
+      border-radius: 50%;
+      z-index: 0;
+      box-shadow: 5rpx 5rpx 30rpx 5rpx	#6495ED;
+    }
+    .add_image{
+      width: 100%;
+      height: 100%;
+      box-shadow: 10rpx 10rpx 20rpx 10rpx	#6495ED;
+      z-index: 100;
+    }
+    
+    
+    /*底部支付*/
+    .pay{
+      position: fixed;/********固定在底部***********/
+      bottom: 0;
+      /*height: 150rpx;*/
+      height: 14%;
+      width: 100%;
+      background-color: #E6E6FA;
+      display: flex;
+      align-items: center;
+    }
+    .pay_txt{
+      font-size: 55rpx;
+      margin: 20rpx;
+      color: #6495ED;
+    }
+    .pay_button{
+      height: 65%;
+      width: 350rpx!important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color:#6495ED;
+      position: absolute;
+      right: 25rpx;
+    }
+    .button_txt{
+      color: #ffff;
+    }
+    
+    
+    
+    /**********弹出窗*************/
+    /*弹出窗*/
+    .tanchu{
+      position: fixed;/*可以自定义位置*/
+      top: 150rpx;/*距离顶部*/
+      background-color: #ffffff;
+      height: 400rpx;
+      display: flex;
+      /*justify-content: center;*/
+      border-radius: 18rpx;/*圆角*/
+      /*flex-direction: row;/*横向*/
+    }
+    .tanchu1{
+      width: 50%;
+      height: 50%;
+      margin: 50rpx 50rpx 0rpx 50rpx;/*外边距*/
+    }
+    
+    .tanchu1_image{
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    
+    /*取消叉叉*/
+    .cancle{
+      position: absolute;
+      width: 50rpx;
+      right: 0;
+      height: 50rpx;
+      z-index: 20;
+    }
+    
+    
+    
+    /******下拉****/
+    .pop-box {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      overflow: hidden;
+      position: fixed;
+    }
+    
+    .pop-box>view {
+      width: 120rpx;
+      height: 120rpx;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: none;
+    }
+    
+    .pop-box>view:nth-child(1) {
+      background-color: rgb(243, 81, 17);
+    }
+    
+    .pop-box>view:nth-child(2) {
+      background-color: rgb(192, 255, 245);
+    }
+    
+    .pop-box>view:nth-child(3) {
+      background-color: rgb(128, 32, 218);
+    }
+    
+    @keyframes unfold {
+      0% {
+        height: 250rpx;
+      }
+    
+      80% {
+        height: 500rpx;
+      }
+    
+      100% {
+        height: 800rpx;
+      }
+    }
+    
+    @keyframes shrink {
+      0% {
+        height: 800rpx;
+      }
+    
+      20% {
+        height: 500rpx;
+      }
+    
+      100% {
+        height: 250rpx;
+      }
+    }
+    .on {
+      height: 800rpx;
+      animation: unfold 0.5s 1 ease-out;
+    }
+    .off {
+      height: 250rpx;
+      animation: shrink 0.5s 1 ease-out;
+    }
+    /******************下拉框内容****************************/
+    .changechart{
+      width: 93%;
+      height: 94%;
+      position: absolute;
+      top: 150rpx;
+      margin: 25rpx;
+    }
+    /*******************第一个：打印纸张************************/
+    
+    .changechartblock{
+      height: 25%;
+      width: 100%;
+      border-top: 1rpx solid 	#B0C4DE;
+      align-items: center;
+      display: flex;
+    }
+    .sex-box {
+      width: 100;
+      font-size: 30rpx;
+      font-weight: bold;
+      color: rgba(51, 51, 51, 1);
+    }
+    .left {
+      width: 30%;
+      line-height: 100rpx;
+      font-size: 35rpx;
+      font-weight: bold;
+      color: rgba(102, 102, 102, 1);
+    }
+    
+    
+    
+    /*********增加减*************/
+    .myview{
+      width: 300rpx;
+      height: 70rpx;
+      align-items: center;
+      font-size: 40rpx;
+      display: flex;
+      flex-direction: row;
+      text-align: center;
+      justify-content: space-around;
+      border: 1rpx solid black;
+      border-radius:10rpx
+    }

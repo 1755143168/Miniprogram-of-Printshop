@@ -1,0 +1,115 @@
+/* miniprogram/pages/order/order.wxss */
+page{
+  background:#DCDCDC;
+  }
+/*********************无订单图片**************************/
+.no_order{
+  height: 300rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.no_orderimage{
+  position: absolute;
+  top: 200rpx;
+  width: 250rpx;
+  height: 200rpx;
+}
+.no_ordertxt{
+  position: absolute;
+  top: 450rpx;
+  color:	#A9A9A9;
+}
+
+
+
+/***********************订单列表****************************/
+.order{
+  position: relative;
+  width: 100%;
+  height: 280rpx;
+  margin: 0 0 25rpx 0;
+  background-color:#F5F5F5;
+}
+.top{
+  width: 100%;
+  border-bottom:1px dashed #C0C0C0;
+  padding: 10rpx;
+  display: flex;
+  align-items: center;
+}
+.top_left{
+  font-size: 25rpx;
+  color: #808080;
+}
+.top_right{
+  font-size: 25rpx;
+  color: #808080;
+  position: absolute;
+  right: 0;
+  padding-right: 10rpx;
+}
+.order_image{
+  position: absolute;
+  left: 20rpx;
+  top: 20rpx;
+  width: 100rpx;
+  height: 100rpx;
+}
+.pice{
+  position: absolute;
+  left: 20rpx;
+  bottom: 20rpx;
+  font-weight: 900;
+  font-size: 30rpx;
+}
+.mid{
+  position: relative;
+  width: 100%;
+  height: 50%;
+  border-bottom:1px dashed #C0C0C0;
+}
+.midview{
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 80%;
+}
+.filename{
+  /*left: 0rpx;*/
+  font-size: 30rpx;
+  font-weight: 600;
+}
+.mid_file{
+  width: 80%;
+  /*position: absolute;*/
+  /*right: 0;*/
+}
+
+dottom{
+  position: absolute;
+  bottom: 0;
+  height: 15%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.num{
+  position: absolute;
+  right: 20rpx;
+  font-size: 30rpx;
+  color: 	#A9A9A9;
+}
+
+
+.status{
+  position: absolute;
+  right: 20rpx;
+  font-size: 30rpx;
+  font-weight: 900;
+  bottom: 0rpx;
+  height: 55rpx;
+  color:#6495ED;
+}
+

@@ -1,0 +1,47 @@
+/* miniprogram/pages/log on/logon.wxss */
+page{
+ overflow: hidden;
+ position: fixed;
+ background-image: url(https://6361-campusprinting-4guaey7l34880aa5-1303184703.tcb.qcloud.la/icon/background.png?sign=6a685883502ac33d60367f4321be6e09&t=1601191297);
+ margin: 0px;
+ background-size: 100% 100%;/*背景全铺*/
+}
+/*标题字体*/
+.tittle_txt{
+  color: darkorange;
+  font-size: 40rpx;
+  font-weight:bold;
+}
+/*标题*/
+.tittle{
+  height: 100rpx;
+  display: flex;
+ align-items: center;
+ justify-content: center;
+ /*padding:10rpx 0 0 0;/*上,右,下,左内边距*/
+}
+
+/*1*/
+.one{
+  padding: 20rpx 50rpx 0 50rpx;
+}
+.one_image{
+  height: 50rpx;
+  width: 50rpx;
+}
+
+/*操作图*/
+.course_main{
+  display: flex;
+  flex-direction: row;
+}
+.course{
+  padding: 30rpx;
+  height: 450rpx;
+  width: 40%;
+}
+.course_image{
+  height: 100%;
+  width: 100%;
+}
+

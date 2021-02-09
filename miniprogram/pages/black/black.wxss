@@ -1,0 +1,60 @@
+/* miniprogram/pages/black/black.wxss */
+
+
+.chose_file{
+  display: flex;
+  margin: 40rpx;
+  height: 350rpx;
+  border: 8rpx dashed #87CEEB;
+  border-radius: 23rpx;
+  position: relative;/*相对定位，子元素的absolute才能生效*/
+  background-color:		#A9A9A9;
+  display: flex;
+  justify-content: center;
+}
+
+.file_image{
+  height: 180rpx;
+  width: 200rpx;
+  position: absolute;/*父元素的position位置固定，这个绝对定位才会生效*/
+  top: 50rpx;
+}
+
+.file_txt{
+  position: absolute;/*父元素的position位置固定，这个绝对定位才会生效*/
+  top: 240rpx;
+}
+
+/*弹出窗*/
+.tanchu{
+  position: fixed;/*可以自定义位置*/
+  top: 150rpx;/*距离顶部*/
+  background-color: #ffffff;
+  height: 400rpx;
+  display: flex;
+  /*justify-content: center;*/
+  border-radius: 18rpx;/*圆角*/
+  /*flex-direction: row;/*横向*/
+}
+.tanchu1{
+  width: 50%;
+  height: 50%;
+  margin: 50rpx 50rpx 0rpx 50rpx;/*外边距*/
+}
+
+.tanchu1_image{
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/*取消叉叉*/
+.cancle{
+  position: absolute;
+  width: 50rpx;
+  right: 0;
+  height: 50rpx;
+  z-index: 20;
+}
+
+

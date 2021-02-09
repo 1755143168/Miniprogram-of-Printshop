@@ -1,0 +1,85 @@
+/* miniprogram/pages/chose/chose.wxss */
+.bgimage{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  filter: blur(1rpx);  /*模糊效果*/
+}
+/*顶部样式*/
+.head{
+  height: 200rpx;
+  width: 100%;
+  background-color: black;
+  display: flex;
+}
+.head.image{
+  height: 100%;
+}
+
+
+/*门店信息样式*/
+.shop_info{
+  height: 150rpx;
+}
+
+
+
+/*选择*/
+.chose{
+  height: 420rpx;
+  display: flex;
+  flex-direction: row;/*横向*/
+}
+/*黑白选择*/
+.b_and_c{
+  width: 50%;/*宽度各占50%*/
+  height: 100%;
+  background-color: #696969;
+  display: flex;
+  margin: 40rpx;/*外边距*/
+  border-radius: 25rpx;/*圆角*/
+  position: relative;/*相对定位，子元素的absolute才能生效*/
+  justify-content: center;/*垂直居中*/
+  box-shadow: 10rpx 10rpx 20rpx 10rpx	#C0C0C0;/*水平，垂直，模糊距离，阴影大小，颜色*/
+}
+/*彩印*/
+.c{
+  width: 50%;/*宽度各占50%*/
+  height: 100%;
+  background-color:	#00FA9A;
+  display: flex;
+  margin: 40rpx;/*外边距*/
+  border-radius: 25rpx;/*圆角*/
+  position: relative;/*相对定位，子元素的absolute才能生效*/
+  justify-content: center;/*垂直居中*/
+  box-shadow: 10rpx 10rpx 20rpx 10rpx	#C0C0C0;/*水平，垂直，模糊距离，阴影大小，颜色*/
+}
+/*选择图片*/
+.chose.image{
+  width: 130rpx;
+  height:130rpx;
+  position: absolute;/*父元素的position位置固定，这个绝对定位才会生效*/
+  top: 50rpx;
+}
+/*格式字体*/
+.chose_txt{
+  position: absolute;
+  bottom: 10rpx;
+  font-size: 30rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;/*垂直居中*/
+}
+.chose_t{
+  position: absolute;
+  top: 240rpx;
+  font-size: 40rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;/*垂直居中*/
+  font-weight: 600;/*字体加粗*/
+}

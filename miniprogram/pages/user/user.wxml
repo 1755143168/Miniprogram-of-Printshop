@@ -1,0 +1,25 @@
+<!--miniprogram/pages/user/user.wxml-->
+<view class="header">
+  <!-- 波浪-->
+  <image class="bg_ware" src="https://moyv.top/wechat/images/bg_wave.gif"></image>
+  <!--头像-->
+  <view class="headportrait" wx:if="{{headportrait}}">
+    <image class="headportrait_image" src="{{userInfo.userInfo}}"></image>
+  </view>
+  <button class="loginbutton" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" wx:if="{{login}}">授权登录</button>
+  <view class="headportrait_txt" wx:if="{{headportrait}}">
+    <text class="name">{{userInfo.username}}</text>
+    <text class="address">来自{{userInfo.useraddress}}的小可爱</text>
+  </view>
+</view>
+
+<!--宫格-->
+<view class="father">
+  <view class="child" wx:for="{{GongGe}}" wx:key="key">
+    <navigator class='child_navigator' url="{{item.url}}">
+      <image class="childimage" src="{{item.icon}}"></image>
+      <text>{{item.txt}}</text>
+    </navigator>
+  </view>
+</view>
+

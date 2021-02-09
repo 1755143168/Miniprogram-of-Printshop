@@ -1,0 +1,101 @@
+<!--index.wxml-->
+<!--门店选择，选择模式-->
+<view class="chose_school">
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" class="picker_1">
+    <view class="picker">选择门店：{{array[index]}}
+    </view>
+  </picker>
+  <view class="picker_text_1">
+  <text class="picker_text" bindtap="pice">查看价格</text>
+</view>
+  <text></text>
+</view>
+<!--黑白/彩印，选择模式-->
+<view class="chose_school">
+    <view class="picker">黑白/彩印：</view>
+</view>
+<!--黑白/彩印，选择-->
+<radio-group bindchange="radiochanges">
+  <radio value='黑白'>黑白</radio>
+  <radio value='彩印'>彩印</radio>
+</radio-group>
+
+<!--单面/双面，选择模式-->
+<view class="chose_school">
+    <view class="picker">单面/双面：</view>
+</view>
+<!--单面/双面，选择-->
+<radio-group bindchange="radiochange">
+  <radio value='单面'>单面</radio>
+  <radio value='双面'>双面</radio>
+</radio-group>
+<!--自取，信箱，选择模式-->
+<view class="chose_school">
+    <view class="picker">自取/信箱：</view>
+</view>
+<!--自取，信箱-->
+<radio-group bindchange="radiochanges_q">
+  <radio value='自取'>自取（地址）</radio>
+  <radio value='信箱'>信箱（备注地址）</radio>
+</radio-group>
+
+
+<!--打印份数，输入-->
+<view class="print_input">
+  <text class="picker_txt">打印份数:</text>
+  <input type="number" class="picker_input" bindinput="picker_input1"/>
+</view>
+
+<!--备注-->
+<view class="print_input">
+  <text class="picker_txt">备注:</text>
+  <input  class="picker_input" bindinput="remarks"/>
+</view>
+
+<!--选择框-->
+<scroll-view scroll-y="true" class="addImv">
+<block wx:for="{{imgArr}}" wx:for-index="idx" imgArr-item="item" wx:key="key">
+  <view >{{idx+1}}:{{item.name}}
+    <image src="../../icon/del.png" class="del_image" data-id="{{idx}}" bindtap="del"></image >
+  </view>
+</block>
+</scroll-view>
+<!--提示-->
+<view>
+<text class="txt">QQ文件可以通过分享给微信文件助手  </text>
+<text class="leding" bindtap="leding">  操作详解</text>
+</view>
+<!--添加文件-->
+<view class="buttton">
+  <button type="primary" class="buttton_a" bindtap="chooseImage">添加文件</button>
+</view>
+<!--新发送-->
+<view class="buttton">
+  <button type="primary" class="buttton_a" bindtap="senEmail_new">发送</button>
+</view>
+
+
+<!--弹窗-->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title">姓名</view>
+  <view class="modal-content">
+    <view class="modal-input">
+      <input placeholder-class="input-holder" type="text" maxlength="11" bindinput="inputChange" class="input" placeholder="请输入姓名"></input>
+      <text></text>
+    </view>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+  </view>
+</view>
+
+
+
+<view bindtap="send">发送文件</view>
+
+
+
+
+

@@ -1,0 +1,70 @@
+<!--miniprogram/pages/choose_style/choose_style.wxml-->
+<!--卡片-->
+<scroll-view scroll-y="true" class="addImv">
+<block wx:for="{{card_len}}"  wx:key="key">
+<view class='card_mian {{item.unfold?"on":""}}'>
+ <view class='card_top '>
+   <image class="card_top_image" src="cloud://campusprinting-4guaey7l34880aa5.6361-campusprinting-4guaey7l34880aa5-1303184703/user_file/项目文件/文档 (1).png"></image>
+   <text class="card_top_txt">{{item.filename}}</text>
+   <view class="navigator_1" bindtap="kindToggle" data-setid="{{item.id}}">
+     <text class="navigator_1txt" >设置样式</text>
+   </view>
+   <image class="delet" src="cloud://campusprinting-4guaey7l34880aa5.6361-campusprinting-4guaey7l34880aa5-1303184703/user_file/项目文件/删 除 .png" bindtap="delet" data-id="{{index}}"></image>
+   <view class="changechart" wx:if="{{item.unfold}}" wx:key="key">
+     <block  wx:for-item="dayItem" wx:for="{{item.chart}}" wx:key="key">
+       <view class="changechartblock">
+        <text class="left">{{dayItem.name}}</text>
+        <view class="sex-box">
+                    <radio-group name="{{dayItem.name}}" bindchange='{{dayItem.fun}}' data-groupid="{{item.id}}" >
+                        <radio class="radio-item" value="{{dayItem.chose1}}" checked="dayItem.name" color="#DBB975">
+                            {{dayItem.chose1}}
+                        </radio>
+                        <radio class="radio-item" value="{{dayItem.chose2}}" checked="" color="#DBB975">{{dayItem.chose2}}</radio>
+                    </radio-group>
+                </view>
+       </view>     
+     </block>
+      <!--加减页数-->
+      <view class="changechartblock">
+        <text class="left">打印页数</text>
+        <view class="myview">
+              <text bindtap="decrease" data-numid="{{item.id}}">-</text>
+              <text>{{item.num}}</text>
+              <text bindtap="increase" data-numid="{{item.id}}">+</text>
+        </view>
+       </view>
+   </view>
+ </view>
+ <view class="view_fengexian"></view>
+ <view class="card_down">
+   <text class="card_down_txt">{{item.page}}/{{item.color}}/{{item.dir}}/{{item.face}}/{{item.num}}份</text>
+   <text class="card_down_txt_behind">打印页码:共{{item.page_num}}页</text>
+ </view>
+</view>
+</block>
+</scroll-view>
+
+
+<!--添加-->
+<image class="add" src="cloud://campusprinting-4guaey7l34880aa5.6361-campusprinting-4guaey7l34880aa5-1303184703/user_file/项目文件/添加.png" bindtap="add"></image>
+<!--底部支付-->
+<view class="pay">
+  <text class="pay_txt">￥{{pice}}</text>
+  <button class="pay_button" bindtap="pay">
+    <text class="button_txt">确认支付</text>
+  </button>
+</view>
+
+
+
+<!--遮盖层-->
+<view  wx:if="{{hideShare}}" style='position:fixed;top:0;bottom:0;right:0;left:0;background-color:#333333d1;display:flex;align-items:flex-end;align-content:center;justify-content: center;'>
+<!--弹出框-->
+<view class="tanchu" wx:if="{{hideShare}}">
+  <view class="tanchu1" wx:for="{{tanchu}}" wx:key="id">
+    <image mode="aspectFit" class="tanchu1_image" src="{{item.image}}" bindtap="{{item.bindtap}}"></image>
+    <text>{{item.txt}}</text>
+  </view>
+  <image class="cancle" src="cloud://campusprinting-4guaey7l34880aa5.6361-campusprinting-4guaey7l34880aa5-1303184703/user_file/项目文件/取消.png" bindtap="cancle"></image>
+</view>
+</view>

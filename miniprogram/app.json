@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/chose/chose",
+    "pages/black/black",
+    "pages/choose_style/choose_style",
+    "pages/choose_style_new/choose_style_new",
+    "pages/logon/logon",
+    "pages/user/user",
+    "pages/index/index",
+    "pages/order/order"
+  ],
+  "window": {
+    "backgroundColor": "#6495ED",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#6495ED",
+    "navigationBarTitleText": "校园打印",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}
