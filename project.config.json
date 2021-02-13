@@ -104,12 +104,6 @@
           "pathName": "pages/order/order",
           "query": "",
           "scene": null
-        },
-        {
-          "name": "选择文件--弹窗组件",
-          "pathName": "components/select-pop",
-          "query": "",
-          "scene": null
         }
       ]
     }

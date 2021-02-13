@@ -9,27 +9,45 @@
   right: 0;
   filter: blur(1rpx);  /*模糊效果*/
 }
-/*顶部样式*/
-.head{
-  height: 200rpx;
+/*头像框*/
+.mid{
+  height: 220rpx;
   width: 100%;
-  background-color: black;
-  display: flex;
+  padding-top: 100rpx;
+  margin-bottom: 50rpx;
+  position: relative;
 }
-.head.image{
+.headportrait{
+  position: absolute;
+  height: 160rpx;
+  width: 160rpx;
+  left: 40rpx;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0rpx 0rpx 30rpx 15rpx #B0C4DE;
+}
+.headportrait_image{
+  width: 100%;
   height: 100%;
+  border-radius: 50%;
+}
+.mid-text{
+  position: absolute;
+  left: 40rpx;
+  bottom: 0rpx;
+  font-size: 40rpx;
+  font-weight: 700;
+  color: #696969;
 }
 
 
-/*门店信息样式*/
-.shop_info{
-  height: 150rpx;
-}
+
 
 
 
 /*选择*/
 .chose{
+  top: 200rpx;
   height: 420rpx;
   display: flex;
   flex-direction: row;/*横向*/
@@ -38,7 +56,7 @@
 .b_and_c{
   width: 50%;/*宽度各占50%*/
   height: 100%;
-  background-color: #696969;
+  background: radial-gradient(circle at 50rpx 50rpx,#696969,	#C0C0C0);
   display: flex;
   margin: 40rpx;/*外边距*/
   border-radius: 25rpx;/*圆角*/
@@ -50,7 +68,7 @@
 .c{
   width: 50%;/*宽度各占50%*/
   height: 100%;
-  background-color:	#00FA9A;
+  background:linear-gradient(#ace,#f96);
   display: flex;
   margin: 40rpx;/*外边距*/
   border-radius: 25rpx;/*圆角*/
@@ -72,14 +90,41 @@
   font-size: 30rpx;
   width: 100%;
   display: flex;
+  color: #000000;
   justify-content: center;/*垂直居中*/
 }
 .chose_t{
   position: absolute;
-  top: 240rpx;
+  top:280rpx;
+  color: #808080;
   font-size: 40rpx;
   width: 100%;
   display: flex;
   justify-content: center;/*垂直居中*/
   font-weight: 600;/*字体加粗*/
+}
+
+
+/***********************箭头动画******************************/
+.img{
+  position: absolute;
+  bottom: 100rpx;
+  right: 40rpx;
+  width: 100px;
+  height: 100px;
+  animation: clipMe 3.5s infinite;
+}
+@keyframes clipMe {
+  0%, 100% {
+    clip: rect(0px, 0px, 170px, 0px);
+  }
+  25% {
+    clip: rect(0px, 150px, 170px, 0px);
+  }
+  50% {
+    clip: rect(0px, 250px, 170px, 0px);
+  }
+  75% {
+    clip: rect(0px, 500px, 170px,0px);
+  }
 }

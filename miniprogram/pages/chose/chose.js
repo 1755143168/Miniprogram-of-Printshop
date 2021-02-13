@@ -4,7 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    openid:""//用户openid
+    
   },
   /*跳转黑白页*/
   b_and_c:function(){
@@ -34,7 +34,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if(wx.getStorageSync('userInfo')){
+      let userInfo = wx.getStorageSync('userInfo')
+      this.setData({
+        login:false,
+        headportrait:true,
+        userInfo:userInfo,
+      })
+    }
   },
 
   /**
@@ -71,5 +78,9 @@ Page({
   onShareAppMessage: function () {
 
   },
-
+  touser:function(){
+    wx.navigateTo({
+      url: '../user/user',
+    })
+  }
 })

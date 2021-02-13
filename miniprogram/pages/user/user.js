@@ -31,12 +31,17 @@ Page({
     ]
   },
   onShow:function(){
-    if(wx.getStorageSync('openid')){
+    if(wx.getStorageSync('userInfo')){
       let userInfo = wx.getStorageSync('userInfo')
       this.setData({
         login:false,
         headportrait:true,
         userInfo:userInfo,
+      })
+    }else{
+      this.setData({
+        login:true,
+        headportrait:false,
       })
     }
   },
@@ -56,29 +61,11 @@ Page({
       data: arry,
       key: 'userInfo',
     })
-    /*
     that.setData({
-      userInfo:userInfo,
-      username:username,
-      useraddress:useraddress,
       login:false,
-      headportrait:true
+      headportrait:true,
+      userInfo:arry,
     })
-    /*
-    wx.login({
-      success: function(res) {
-        if (res.code) {
-          //发起网络请求
-          wx.request({
-            url: 'https://test.com/onLogin',
-            data: {
-              code: res.code
-            }
-          })
-        } else {
-          console.log('获取用户登录态失败！' + res.errMsg)
-        }
-      }
-    });*/
+   
   }
 })

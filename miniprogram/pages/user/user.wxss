@@ -30,6 +30,9 @@
 }
 /************登录按钮****************/
 .loginbutton{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100rpx;
   width: 80rpx;
   border-radius: 25rpx;
@@ -65,7 +68,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 20rpx;
-  background: radial-gradient(circle,#87CEFA,80%,#ADD8E6);
+  background: radial-gradient(circle,#87CEFA,80%,#ADD8E6);/*渐变*/
   box-shadow: 12rpx 12rpx 30rpx #6495ED;
   background-color: 	#6495ED;
   margin: 20rpx auto;

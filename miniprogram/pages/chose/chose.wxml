@@ -1,7 +1,8 @@
 <!--miniprogram/pages/chose/chose.wxml-->
-<!--顶部-->
+<!--背景-->
 <image class="bgimage" src="/icon/indexbg.jpg"></image>
-<!--选择
+<view class="mid"></view>
+<!--选择文件区-->
 <view class="chose">
   <view class="b_and_c" bindtap="b_and_c">
     <image class="chose.image" src="cloud://campusprinting-4guaey7l34880aa5.6361-campusprinting-4guaey7l34880aa5-1303184703/user_file/项目文件/打印.png"></image>
@@ -13,4 +14,11 @@
     <view class="chose_t">彩色打印</view>
     <view class="chose_txt">支持:word,pdf,excel</view>
   </view>
-</view>-->
+</view>
+
+
+
+<!--箭头-->
+<image class="img" bindtap="touser" src="/icon/right.png">
+  <text class="mid-text">个人中心</text>
+</image>

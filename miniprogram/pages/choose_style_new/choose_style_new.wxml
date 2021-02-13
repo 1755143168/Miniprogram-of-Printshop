@@ -56,7 +56,6 @@
 </view>
 
 
-
 <!--遮盖层-->
 <view  wx:if="{{hideShare}}" style='position:fixed;top:0;bottom:0;right:0;left:0;background-color:#333333d1;display:flex;align-items:flex-end;align-content:center;justify-content: center;'>
 <!--弹出框-->
