@@ -87,6 +87,23 @@
   margin: 0 30rpx 0 0;
 }
 
-
-
-
+/***************联系客服**************************************/
+.bottom{
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;/*元素方向*/
+}
+.contact{
+  color: #6495ED;
+  background-color: transparent;/*透明设置*/
+  font-size: 30rpx;
+}
+/*分割线样式*/
+.divLine{
+  background: #E0E3DA;
+  width: 50%;
+  height: 5rpx;
+  
+ }

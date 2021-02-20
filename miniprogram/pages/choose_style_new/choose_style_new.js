@@ -135,7 +135,7 @@ chooseMessageFile_1:function(){
                 title: '识别页数中',
               })
               wx.request({
-                url: 'http://47.101.68.171:8088/candle/',
+                url: 'http://127.0.0.1:8000/candle/',
                 method:"GET",
                 data:{
                   'form':downloudPath
@@ -414,7 +414,7 @@ pay(){
     },
     success: function(res) {
       wx.request({
-        url: 'http://47.101.68.171:8088/wx/',
+        url: 'http://127.0.0.1:8000/wx/',
         method:"POST",
         data:{
           "random":random_number,

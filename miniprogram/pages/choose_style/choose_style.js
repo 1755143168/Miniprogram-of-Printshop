@@ -1,5 +1,4 @@
 // miniprogram/pages/choose_style/choose_style.js
-var app=getApp()
 const db = wx.cloud.database({
   env: 'campusprinting-4guaey7l34880aa5',
 }).collection("userorder")
@@ -33,7 +32,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
   },
 
   /**
@@ -146,21 +144,24 @@ chooseMessageFile_1:function(){
                   'content-type': 'application/json' 
                 },
                 success(res){
+                  wx.showToast({
+                    title: '总页数:'+res.data,
+                  })
                   console.log('页数',res)
                   const pagenum = res.data
                   let newArray={
-                    url: res.fileID,//定义文件data
-                    filename:filename,//文件名
-                    color:"黑白",//黑白彩印
-                    page_num:pagenum,//页数
-                    dir:"横向",//打印方向
-                    num:1,//份数
-                    pice_face:0.2,
-                    face:"单面",//单双面
-                    page:"A4",//A4/A3
-                    allpice:"0.2",//总价格
-                    downloudPath:downloudPath,//下载地址
-                    id:that.data.card_len.length,
+                    "filename":filename,//文件名
+                    "color":"黑白",//黑白彩印
+                    "page_num":pagenum,//页数
+                    "dir":"横向",//打印方向
+                    "num":1,//份数
+                    "pice_face":0.2,
+                    "download":"false",//打印状态
+                    "face":"单面",//单双面
+                    "page":"A4",//A4/A3
+                    "allpice":"0.2",//总价格
+                    "downloudPath":downloudPath,//下载地址
+                    "id":that.data.card_len.length,
                     chart:[{
                       id:1,
                       fun:"paper",
@@ -182,27 +183,29 @@ chooseMessageFile_1:function(){
                       chose1:"单面",
                       chose2:"双面"
                     },
-                  
                   ]
-              
                   }
-                  var card_len = that.data.card_len
                   var length = that.data.card_len.length+1
                   that.setData({
                     card_len:that.data.card_len.concat(newArray),
-                    hideShare:false,//弹窗显示
+                    hideShare:false,//关闭弹窗显示
                     length_cardlen:length
                    })
                   },
-                  complete(){
-                    wx.hideLoading({
-                      success: (res) => {
-                        wx.showToast({
-                          title: '成功',
-                        })
-                        that.getTotalprice();//计算价格
-                      },
+                  fail(err){
+                    console.log(err)
+                    wx.hideLoading()
+                    wx.showToast({
+                      title: '错误:'+err.errMsg,
+                      icon:"none"
                     })
+                    that.setData({
+                      hideShare:false,//关闭弹窗显示
+                    })
+                  },
+                  complete(){
+                    wx.hideLoading()
+                    that.getTotalprice();//计算价格
                   }
               })
             },
@@ -304,39 +307,6 @@ this.getTotalprice();//计算价格
 },
 
 
-/***************************************************将订单数据传到服务器**************************************/
-senddata(){
-  console.log('开始发送')
-  const pice = this.data.pice
-  const openid = wx.getStorageSync('openid')
-  const data = this.data.card_len
-  var util = require("../../util/util.js")
-  let arr={
-    openid:openid,
-    orderInfo:data,
-    time:util.formatTime(new Date()),
-    pice:pice
-  }
-  console.log(arr)
-  /*
-  wx.request({
-    url: 'http://127.0.0.1:8000/wx/',
-    method:"POST",
-    data:{
-      'order':arr
-    },
-    header: { 
-      'content-type': 'application/json' 
-    },
-    success(res){
-      console.log('正在努力打印')
-    },
-    fail(err){
-      console.log('失败',err)
-    }
-})*/
-},
-
 /******************改变样式*********************** */
 paper: function (res) {
   var that = this
@@ -423,24 +393,70 @@ getTotalprice(){
 
 /***********************确认支付***********************/
 pay(){
+  wx.showLoading({
+    title: "提交订单中..",
+  });
+  var that = this
   const data = this.data.card_len
   const pice = this.data.pice
   const openid = wx.getStorageSync('openid')
   var util = require("../../util/util.js")
+  let stamp = new Date().getTime()
+  let random_number = (((1+Math.random())*stamp)|0).toString(16)
   db.add({
     data:{
+      random:random_number,
       openid:openid,
       orderInfo:data,
       time:util.formatTime(new Date()),
-      pice:pice
+      pice:pice,
+      status:"待打印",
     },
     success: function(res) {
-      console.log(res._id)
-      },
-      complete(){
-        this.senddata()  /*向服务端发送订单数据*/
-      }
-  })
+      wx.request({
+        url: 'http://127.0.0.1:8000/wx/',
+        method:"POST",
+        data:{
+          "random":random_number,
+          "openid":openid,
+          "orderInfo":data,
+          "time":util.formatTime(new Date()),
+          "pice":pice
+        },
+        header: { 
+          'content-type': 'application/json' 
+        },
+        success(res){
+          console.log('正在努力打印')
+          wx.hideLoading()
+          wx.showToast({
+            title: '提交成功',
+            icon:"success"
+          })
+
+        },
+        fail(err){
+          console.log('失败',err)
+          wx.showModal({
+            title:"提交失败",
+            content:'点击确定再试一次',
+            success(res){
+              if(res.confirm){
+                this.pay() //提交失败之后，确定再次提交
+              }else if (res.cancle){
+                console.log("用户取消")
+              }
+            }
+          })
+        },
+        complete(){
+          wx.navigateBack({
+            delta: 1,
+          })
+        }
+      })
+    }
+    })
 },
 
 })

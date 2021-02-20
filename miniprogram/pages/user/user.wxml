@@ -23,3 +23,14 @@
   </view>
 </view>
 
+
+
+
+
+<view class="bottom">
+  <button style="height:50rpx"  class="contact" open-type="contact">联系客服</button>
+   <!-- 分割线 -->
+   <view class="divLine"></view>
+</view>
+
+

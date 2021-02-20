@@ -6,7 +6,6 @@
     "pages/choose_style_new/choose_style_new",
     "pages/logon/logon",
     "pages/user/user",
-    "pages/index/index",
     "pages/order/order"
   ],
   "window": {

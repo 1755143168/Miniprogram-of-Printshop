@@ -24,9 +24,9 @@ Page({
         url:"../logon/logon"//页面地址
       },
       {
-        txt:"客服",
-        icon:"/icon/phone.png",
-        url:"../logon/logon"//页面地址
+        txt:"喝啥",
+        icon:"/icon/drink.png",
+        url:""//页面地址
       }
     ]
   },
